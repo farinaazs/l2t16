@@ -1,4 +1,4 @@
-package l2t07;
+package l2t16.l2t16;
 
 import java.io.*;
 import java.util.*;
@@ -18,7 +18,7 @@ public class QuickFoods {
       System.out.println("\n----------- Restaurant Details Captured -----------\n");
 
       // Load drivers from drivers.txt
-      List<Driver> drivers = Driver.loadDriversFromFile("drivers.txt");
+      List<Driver> drivers = Driver.loadDriversFromFile("src\\l2t16\\l2t16\\drivers-info.txt");
 
       // Find the most suitable driver
       Driver assignedDriver = findDriverForRestaurant(drivers, restaurant);
@@ -120,7 +120,7 @@ public class QuickFoods {
         "If you need to contact the restaurant, their number is 0" +
         restaurant.getRestaurantContactNumber() + ".\n";
 
-    writeToFile("src\\l2t07\\invoice.txt", invoice);
+    writeToFile("src\\l2t16\\l2t16\\invoice.txt", invoice);
     System.out.println(invoice);
   }
 
@@ -128,7 +128,7 @@ public class QuickFoods {
   private static void handleUnavailableDrivers() throws IOException {
     String message = "Sorry! Our drivers are too far away to deliver to your location.";
     System.out.println(message);
-    writeToFile("src\\l2t07\\invoice.txt", message);
+    writeToFile("src\\l2t16\\l2t16\\invoice.txt", message);
   }
 
   // Write content to file.

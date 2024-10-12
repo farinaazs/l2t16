@@ -1,4 +1,4 @@
-package l2t07;
+package l2t16.l2t16;
 
 public class Restaurant {
   // Private fields to encapsulate the restaurant and meal details.
