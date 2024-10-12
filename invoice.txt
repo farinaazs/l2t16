@@ -1,0 +1,19 @@
+Order Number: 1234
+Customer: John Doe
+Email: john@test.com
+Phone Number: 0219879876
+Location: Cape Town
+
+You have ordered the following from Saray V&A in Cape Town:
+
+3 x Veggie Pida (R110.00)
+
+Special instructions: Cheese!
+
+Total: R330.00
+
+Miranda Metcalfe is nearest to the restaurant and will deliver to:
+
+20 Test Street, Test
+
+If you need to contact the restaurant, their number is 0821346987.

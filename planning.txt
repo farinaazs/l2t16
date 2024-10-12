@@ -1,0 +1,84 @@
+# Program Design for Quick Foods Application
+
+1. Overview:
+The Quick Foods application allows customers to place orders from restaurants.
+The program assigns a driver to deliver the food, and an invoice is generated.
+
+2. Classes:
+
+Class: Customer
+- Attributes:
+  - int orderNumber
+  - String customerName
+  - int customerContactNumber
+  - String customerAddress
+  - String customerLocation
+  - String customerEmail
+
+- Methods:
+  - Constructor: Initialise all attributes.
+  - toString(): Return a formatted string of customer's details.
+
+Class: Restaurant
+- Attributes:
+  - String restaurantName
+  - int restaurantContactNumber
+  - String restaurantLocation
+  - String mealName
+  - String specialInstructions
+  - double mealPrice
+  - int quantity
+
+- Methods:
+  - Constructor: Initialise all attributes.
+  - getMealPrice(): Calculate and return the total price of the meal.
+  - RestaurantToString(): Return a formatted string of meal details for the invoice.
+
+Class: Driver
+- Attributes:
+  - String driverName
+  - String driverLocation
+  - int driverLoad
+
+- Methods:
+  - Constructor: Initialise all attributes.
+  - getDriverLocation(): Return the driver’s location.
+  - getDriverLoad(): Return the current load of the driver.
+  - loadDriversFromFile(): Read drivers from the file and return a list of drivers.
+  - toString(): Return a formatted string of driver details.
+
+Class: QuickFoods (Main Class)
+- Methods:
+  - main(): The entry point of the program. Captures input for Customer and Restaurant.
+  - loadDrivers(): Load driver data from `drivers.txt`.
+  - findDriverForRestaurant(): Find the nearest driver with the lowest load in the same area.
+  - generateInvoice(): Generate the invoice based on the Customer, Restaurant, and Driver details.
+  - writeToFile(): Write content to a specified text file.
+
+3. Relationships between Classes:
+- `QuickFoods` uses `Customer`, `Restaurant`, and `Driver` classes.
+- `Customer` and `Restaurant` objects are created based on user input.
+- `Driver` objects are loaded from a file and matched with the restaurant’s location.
+- The `QuickFoods` class manages the overall workflow of the program (creating objects, assigning a driver, and generating the invoice).
+
+4. Pseudocode for the main program:
+
+1. Start main method in `QuickFoods`:
+   - Display a welcome message.
+   - Ask for customer details (orderNumber, customerName, etc.).
+   - Create a new `Customer` object.
+   - Ask for restaurant details (restaurantName, mealName, etc.).
+   - Create a new `Restaurant` object.
+
+2. Load drivers:
+   - Call `Driver.loadDriversFromFile()` to read the `drivers.txt` file.
+   - Store the drivers in a list.
+
+3. Find a suitable driver:
+   - Call `findDriverForRestaurant()` to find the driver with the smallest load in the same location as the restaurant.
+   - If a suitable driver is found, proceed to step 4.
+   - If no suitable driver is found, write "Sorry! Our drivers are too far..." to the invoice file and end the program.
+
+4. Generate an invoice:
+   - Call `generateInvoice()` to create an invoice based on customer, restaurant, and driver details.
+   - Write the invoice to `invoice.txt`.
